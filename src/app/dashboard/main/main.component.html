@@ -1,282 +1,140 @@
-   <!-- Page Wrapper -->
-    <div id="wrapper">
+<div id="wrapper">
+  <app-sidebar></app-sidebar>
 
-        <!-- Sidebar -->
-        <app-sidebar></app-sidebar>
-        <!-- Content Wrapper -->
-        <div id="content-wrapper" class="d-flex flex-column" style="height: 100vh; overflow-y: auto;">
+  <div id="content-wrapper" class="d-flex flex-column gov-admin-wrapper">
+    <div id="content">
+      <app-topbar></app-topbar>
 
-            <!-- Main Content -->
-            <div id="content">
+      <div class="container-fluid gov-dashboard">
+        <section class="gov-dashboard__hero">
+          <div>
+            <span class="gov-dashboard__eyebrow">Panel administrativo</span>
+            <h1 class="h3 mb-2 text-gray-900">Gestión institucional del Observatorio Apurímac</h1>
+            <p class="mb-0">Administra contenidos, materiales y relaciones institucionales desde una interfaz más clara, sobria y orientada al trabajo técnico.</p>
+          </div>
+          <a (click)="redireccionarInicio()" class="d-inline-block btn btn-primary shadow-sm">
+            <i class="fas fa-home fa-sm text-white-50 mr-2"></i> Ver portal público
+          </a>
+        </section>
 
-                <!-- Topbar -->
-                <app-topbar></app-topbar>
-                <!-- End of Topbar -->
-
-                <!-- Begin Page Content -->
-                <div class="container-fluid">
-
-                    <!-- Page Heading -->
-                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
-                        <a (click)="redireccionarInicio()" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                            class="fas fa-home fa-sm text-white-50"></i> Ir al Inicio</a>
-                    </div>
-
-                    <!-- Content Row -->
-                    <div class="row">
-
-                        <!-- Earnings (Monthly) Card Example -->
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-primary shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                                NOTICIAS</div>
-                                            <div (click)="redireccionarCrearNoticia()" class="h5 mb-0 font-weight-bold text-gray-800 redirect-dashboard">Crear Nueva Noticia</div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <!-- <i class="fas fa-calendar fa-2x text-gray-300"></i> -->
-                                            <i class="fas fa-fw fa-bullhorn fa-2x text-gray-300"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Earnings (Monthly) Card Example -->
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-success shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                                NOTICIAs</div>
-                                            <div (click)="redireccionarListaNoticia()" class="redirect-dashboard h5 mb-0 font-weight-bold text-gray-800">Ver Noticias </div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-fw fa-folder-open fa-2x text-gray-300"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Earnings (Monthly) Card Example -->
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-info shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Infografias
-                                            </div>
-                                            <div class="row no-gutters align-items-center">
-                                                <div class="col-auto">
-                                                    <div (click)="redireccionarCrearInfografia()" class="redirect-dashboard h5 mb-0 mr-3 font-weight-bold text-gray-800">Crear Nueva Infografia</div>
-                                                </div>
-                                                <!-- <div class="col">
-                                                    <div class="progress progress-sm mr-2">
-                                                        <div class="progress-bar bg-info" role="progressbar"
-                                                            style="width: 50%" aria-valuenow="50" aria-valuemin="0"
-                                                            aria-valuemax="100"></div>
-                                                    </div>
-                                                </div> -->
-                                            </div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-fw fa-file-alt fa-2x text-gray-300"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Pending Requests Card Example -->
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-warning shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                                                INFOGRAFIAS</div>
-                                            <div (click)="redireccionarListaInfografia()" class="redirect-dashboard h5 mb-0 font-weight-bold text-gray-800">Ver Infografias</div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-fw fa-folder-open fa-2x text-gray-300"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Earnings (Monthly) Card Example -->
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-info shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">VIDEOS
-                                            </div>
-                                            <div class="row no-gutters align-items-center">
-                                                <div class="col-auto">
-                                                    <div (click)="redireccionarCrearVideo()" class="redirect-dashboard h5 mb-0 mr-3 font-weight-bold text-gray-800">Subir Nuevo Video</div>
-                                                </div>
-                                                <!-- <div class="col">
-                                                    <div class="progress progress-sm mr-2">
-                                                        <div class="progress-bar bg-info" role="progressbar"
-                                                            style="width: 50%" aria-valuenow="50" aria-valuemin="0"
-                                                            aria-valuemax="100"></div>
-                                                    </div>
-                                                </div> -->
-                                            </div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-fw fa-video fa-2x text-gray-300"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Pending Requests Card Example -->
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-warning shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                                                VIDEOS</div>
-                                            <div (click)="redireccionarListaVideo()" class="redirect-dashboard h5 mb-0 font-weight-bold text-gray-800">Ver Videos</div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-fw fa-play-circle fa-2x text-gray-300"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Earnings (Monthly) Card Example -->
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-primary shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                                USUARIOS</div>
-                                            <div (click)="redireccionarCrearUsuario()" class="redirect-dashboard h5 mb-0 font-weight-bold text-gray-800">Crear Nuevo Usuario</div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-fw fa-user-plus fa-2x text-gray-300"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Earnings (Monthly) Card Example -->
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-success shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                                USUARIOS</div>
-                                            <div (click)="redireccionarListaUsuario()" class="redirect-dashboard h5 mb-0 font-weight-bold text-gray-800">Ver Usuarios </div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-fw fa-users fa-2x text-gray-300"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Earnings (Monthly) Card Example -->
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-info shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Entidaddes Aliadas
-                                            </div>
-                                            <div class="row no-gutters align-items-center">
-                                                <div class="col-auto">
-                                                    <div (click)="redireccionarEntidadAliada()" class="redirect-dashboard h5 mb-0 mr-3 font-weight-bold text-gray-800">Ver Entidades Aliadas</div>
-                                                </div>
-                                                <!-- <div class="col">
-                                                    <div class="progress progress-sm mr-2">
-                                                        <div class="progress-bar bg-info" role="progressbar"
-                                                            style="width: 50%" aria-valuenow="50" aria-valuemin="0"
-                                                            aria-valuemax="100"></div>
-                                                    </div>
-                                                </div> -->
-                                            </div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-fw fa-file-alt fa-2x text-gray-300"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>                                               
-                        
-                        <!-- Pending Requests Card Example -->
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-warning shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                                                Entidades Aliadas</div>
-                                            <div (click)="redireccionarCrearEntidadAliada()" class="redirect-dashboard h5 mb-0 font-weight-bold text-gray-800">Crear Entidad Aliada</div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-fw fa-folder-open fa-2x text-gray-300"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>                                                
-
-                    </div>
-
-
-                </div>
-                <!-- /.container-fluid -->
-
+        <section class="row gov-kpis">
+          <div class="col-xl-4 col-md-6 mb-4">
+            <div class="gov-kpi-card gov-kpi-card--blue">
+              <span>Contenido editorial</span>
+              <strong>Noticias, infografías y videos</strong>
+              <p>Gestiona publicaciones, piezas visuales y material audiovisual con accesos directos a creación y revisión.</p>
             </div>
-            <!-- End of Main Content -->
-
-            <!-- Footer -->
-            <app-footer></app-footer>
-            <!-- End of Footer -->
-
-        </div>
-        <!-- End of Content Wrapper -->
-
-    </div>
-    <!-- End of Page Wrapper -->
-
-    <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
-                </div>
+          </div>
+          <div class="col-xl-4 col-md-6 mb-4">
+            <div class="gov-kpi-card gov-kpi-card--gold">
+              <span>Articulación institucional</span>
+              <strong>Entidades aliadas</strong>
+              <p>Centraliza el directorio de aliados y la documentación relacionada para seguimiento territorial.</p>
             </div>
-        </div>
+          </div>
+          <div class="col-xl-4 col-md-12 mb-4">
+            <div class="gov-kpi-card gov-kpi-card--slate">
+              <span>Administración interna</span>
+              <strong>Usuarios y control operativo</strong>
+              <p>Organiza accesos, perfiles internos y revisión básica del funcionamiento del panel.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="row">
+          <div class="col-xl-3 col-md-6 mb-4">
+            <div class="gov-action-card" (click)="redireccionarCrearNoticia()">
+              <i class="fas fa-bullhorn"></i>
+              <span>Noticias</span>
+              <strong>Registrar noticia</strong>
+              <p>Publicar un nuevo contenido informativo.</p>
+            </div>
+          </div>
+
+          <div class="col-xl-3 col-md-6 mb-4">
+            <div class="gov-action-card" (click)="redireccionarListaNoticia()">
+              <i class="fas fa-folder-open"></i>
+              <span>Noticias</span>
+              <strong>Revisar listado</strong>
+              <p>Consultar, editar o retirar publicaciones.</p>
+            </div>
+          </div>
+
+          <div class="col-xl-3 col-md-6 mb-4">
+            <div class="gov-action-card" (click)="redireccionarCrearInfografia()">
+              <i class="fas fa-file-alt"></i>
+              <span>Infografías</span>
+              <strong>Registrar infografía</strong>
+              <p>Subir nuevo material visual del observatorio.</p>
+            </div>
+          </div>
+
+          <div class="col-xl-3 col-md-6 mb-4">
+            <div class="gov-action-card" (click)="redireccionarListaInfografia()">
+              <i class="fas fa-images"></i>
+              <span>Infografías</span>
+              <strong>Revisar listado</strong>
+              <p>Gestionar piezas visuales ya registradas.</p>
+            </div>
+          </div>
+
+          <div class="col-xl-3 col-md-6 mb-4">
+            <div class="gov-action-card" (click)="redireccionarCrearVideo()">
+              <i class="fas fa-video"></i>
+              <span>Videos</span>
+              <strong>Registrar video</strong>
+              <p>Agregar nuevo contenido audiovisual institucional.</p>
+            </div>
+          </div>
+
+          <div class="col-xl-3 col-md-6 mb-4">
+            <div class="gov-action-card" (click)="redireccionarListaVideo()">
+              <i class="fas fa-play-circle"></i>
+              <span>Videos</span>
+              <strong>Revisar listado</strong>
+              <p>Consultar y mantener el catálogo audiovisual.</p>
+            </div>
+          </div>
+
+          <div class="col-xl-3 col-md-6 mb-4">
+            <div class="gov-action-card" (click)="redireccionarListaUsuario()">
+              <i class="fas fa-users"></i>
+              <span>Usuarios</span>
+              <strong>Administrar accesos</strong>
+              <p>Revisar usuarios internos y perfiles activos.</p>
+            </div>
+          </div>
+
+          <div class="col-xl-3 col-md-6 mb-4">
+            <div class="gov-action-card" (click)="redireccionarCrearUsuario()">
+              <i class="fas fa-user-plus"></i>
+              <span>Usuarios</span>
+              <strong>Registrar usuario</strong>
+              <p>Crear una nueva cuenta de administración.</p>
+            </div>
+          </div>
+
+          <div class="col-xl-6 col-md-6 mb-4">
+            <div class="gov-action-card gov-action-card--wide" (click)="redireccionarEntidadAliada()">
+              <i class="fas fa-handshake"></i>
+              <span>Entidades aliadas</span>
+              <strong>Consultar directorio institucional</strong>
+              <p>Ver el registro de aliados, fichas y materiales relacionados con la articulación regional.</p>
+            </div>
+          </div>
+
+          <div class="col-xl-6 col-md-6 mb-4">
+            <div class="gov-action-card gov-action-card--wide" (click)="redireccionarCrearEntidadAliada()">
+              <i class="fas fa-plus-circle"></i>
+              <span>Entidades aliadas</span>
+              <strong>Registrar nueva entidad</strong>
+              <p>Incorporar organizaciones aliadas con su descripción, identidad y documentación base.</p>
+            </div>
+          </div>
+        </section>
+      </div>
     </div>
 
-
+    <app-footer></app-footer>
+  </div>
+</div>

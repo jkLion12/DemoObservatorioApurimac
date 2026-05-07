@@ -1,9 +1,52 @@
-.logo {
-    width: 400px;
-    margin-right: auto; /* Esto asegura que el logo se quede en el lugar original */
-  }
+:host {
+  display: block;
+}
 
-  a {
-    cursor: pointer;
-  }
-  
+.logo {
+  width: 260px;
+  max-width: 100%;
+  filter: brightness(0) invert(1);
+}
+
+.container-fluid.bg-dark {
+  background: linear-gradient(180deg, #0d2442 0%, #102c50 100%) !important;
+}
+
+.text-white-50 {
+  color: rgba(238, 244, 251, 0.82) !important;
+}
+
+.text-white {
+  color: #ffffff !important;
+}
+
+h5,
+h6 {
+  font-size: 0.96rem;
+  font-weight: 700;
+}
+
+.btn-outline-primary {
+  color: #d8b36b;
+  border-color: rgba(216, 179, 107, 0.55);
+}
+
+.btn-outline-primary:hover {
+  color: #0d2442;
+  background-color: #d8b36b;
+  border-color: #d8b36b;
+}
+
+.input-group .form-control {
+  border-radius: 8px 0 0 8px;
+}
+
+.input-group .btn {
+  border-radius: 0 8px 8px 0;
+}
+
+a.text-white-50:hover,
+.container-fluid.bg-dark a:hover {
+  color: #d8b36b !important;
+  text-decoration: none;
+}

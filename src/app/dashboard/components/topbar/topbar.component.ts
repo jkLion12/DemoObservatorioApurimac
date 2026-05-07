@@ -8,7 +8,7 @@ import { isPlatformBrowser } from '@angular/common';
   standalone: true,
   imports: [],
   templateUrl: './topbar.component.html',
-  styleUrl: '../../componentes dashboard/css/sb-admin-2.min.css'
+  styleUrls: ['./topbar.component.css', '../../componentes dashboard/css/sb-admin-2.min.css']
 })
 export class TopbarComponent {
 

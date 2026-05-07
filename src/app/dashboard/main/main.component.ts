@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
   standalone: true,
   imports: [SidebarComponent, TopbarComponent, FooterComponent],
   templateUrl: './main.component.html',
-  styleUrl: '../componentes dashboard/css/sb-admin-2.min.css'
+  styleUrls: ['./main.component.css', '../componentes dashboard/css/sb-admin-2.min.css']
 })
 export class MainComponent {
 

@@ -9544,3 +9544,62 @@ h6,
 a{
   color: #7AB730;
 }
+
+body {
+  background-color: #f4f7fb;
+  color: #5b6978;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #15314d;
+}
+
+h1,
+.h1 {
+  font-size: 2.25rem;
+}
+
+h2,
+.h2 {
+  font-size: 1.85rem;
+}
+
+h3,
+.h3 {
+  font-size: 1.45rem;
+}
+
+.text-primary {
+  color: #0f2f57 !important;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #0f2f57, #1d4b7a) !important;
+  border-color: #0f2f57 !important;
+  box-shadow: none !important;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background: linear-gradient(135deg, #143d6f, #24588e) !important;
+  border-color: #143d6f !important;
+}
+
+.bg-white {
+  background-color: #ffffff !important;
+}
+
+.blog-item,
+.about-text,
+.service-item,
+.package-item,
+.team-item,
+.conteiner-inicio,
+.conteriner-noticia {
+  border-radius: 14px;
+}

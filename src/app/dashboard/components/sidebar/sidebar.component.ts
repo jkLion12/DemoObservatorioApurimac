@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
   standalone: true,
   imports: [],
   templateUrl: './sidebar.component.html',
-  styleUrl: '../../componentes dashboard/css/sb-admin-2.min.css'
+  styleUrls: ['./sidebar.component.css', '../../componentes dashboard/css/sb-admin-2.min.css']
 
 })
 export class SidebarComponent {

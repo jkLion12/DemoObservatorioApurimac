@@ -1,3 +1,74 @@
-a{
-    cursor: pointer;
+.gov-sidebar {
+  background: linear-gradient(180deg, #0e2a4d 0%, #123960 100%) !important;
+}
+
+.gov-sidebar .sidebar-brand {
+  height: auto;
+  padding: 1.4rem 1rem 1.2rem;
+  cursor: pointer;
+}
+
+.gov-sidebar .sidebar-brand-icon {
+  font-size: 1.2rem;
+  color: #d8b36b;
+}
+
+.gov-sidebar .sidebar-brand-text {
+  font-size: 0.96rem;
+  line-height: 1.25;
+  text-transform: none;
+  letter-spacing: 0.02em;
+}
+
+.gov-sidebar .sidebar-heading {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+}
+
+.gov-sidebar .nav-item .nav-link {
+  padding-top: 0.9rem;
+  padding-bottom: 0.9rem;
+}
+
+.gov-sidebar .nav-item .nav-link span {
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.gov-sidebar .collapse-inner {
+  border-radius: 0.8rem !important;
+  box-shadow: 0 10px 25px rgba(15, 47, 87, 0.14);
+}
+
+.gov-sidebar .collapse-header {
+  color: #0f2f57;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+}
+
+.gov-sidebar .collapse-item {
+  cursor: pointer;
+}
+
+.sidebar-footer {
+  margin: 1.2rem 1rem 0;
+  padding: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.sidebar-footer small {
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.66rem;
+  opacity: 0.72;
+}
+
+.sidebar-footer strong {
+  display: block;
+  margin-top: 0.4rem;
+  font-size: 0.85rem;
+  color: #ffffff;
 }
