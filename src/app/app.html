@@ -1,0 +1,55 @@
+<div class="app-shell">
+  <aside class="sidebar">
+    <div class="brand-card">
+      <span class="kicker">Demo visual Angular 21</span>
+      <h1>{{ title }}</h1>
+      <p>Recreación estática del proyecto ObservatorioApurimac con un lenguaje visual más actual y todas las vistas disponibles.</p>
+      <a class="brand-link" routerLink="/home" routerLinkActive="active-link">Ver portada</a>
+    </div>
+
+    <section class="nav-block">
+      <span class="nav-title">{{ portalNav.title }}</span>
+      @for (page of portalNav.pages; track page.key) {
+        <a class="nav-link" [routerLink]="page.samplePath" routerLinkActive="active-link">
+          <strong>{{ page.label }}</strong>
+          <small>{{ page.path }}</small>
+        </a>
+      }
+    </section>
+
+    <section class="nav-block">
+      <span class="nav-title">{{ dashboardNav.title }}</span>
+      @for (page of dashboardNav.pages; track page.key) {
+        <a class="nav-link" [routerLink]="page.samplePath" routerLinkActive="active-link">
+          <strong>{{ page.label }}</strong>
+          <small>{{ page.path }}</small>
+        </a>
+      }
+    </section>
+  </aside>
+
+  <main class="workspace">
+    <header class="topbar">
+      <div>
+        <span class="top-kicker">Observatorio de demo</span>
+        <h2>Todas las vistas del original, ahora en una demo visual más limpia</h2>
+      </div>
+      <div class="top-stats">
+        <article>
+          <span>Portal</span>
+          <strong>13 vistas</strong>
+        </article>
+        <article>
+          <span>Dashboard</span>
+          <strong>17 vistas</strong>
+        </article>
+        <article>
+          <span>Enfoque</span>
+          <strong>Solo UI</strong>
+        </article>
+      </div>
+    </header>
+
+    <router-outlet />
+  </main>
+</div>
