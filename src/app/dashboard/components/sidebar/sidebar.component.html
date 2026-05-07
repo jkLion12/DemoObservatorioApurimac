@@ -3,7 +3,7 @@
     <div class="sidebar-brand-icon">
       <i class="fas fa-landmark"></i>
     </div>
-    <div class="sidebar-brand-text mx-2">Observatorio Apurímac</div>
+    <div class="sidebar-brand-text mx-2">Observatorio Apurimac</div>
   </a>
 
   <hr class="sidebar-divider my-0">
@@ -18,7 +18,7 @@
   <hr class="sidebar-divider">
 
   <div class="sidebar-heading">
-    Gestión de contenidos
+    Gestion de contenidos
   </div>
 
   <li class="nav-item">
@@ -28,8 +28,7 @@
     </a>
     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
       <div class="bg-white py-2 collapse-inner rounded">
-        <h6 class="collapse-header">Administración de noticias</h6>
-        <a class="collapse-item" (click)="redireccionarCrearNoticia()"><i class="fas fa-fw fa-edit"></i>Registrar noticia</a>
+        <h6 class="collapse-header">Administracion de noticias</h6>
         <a class="collapse-item" (click)="redireccionarListaNoticia()"><i class="fas fa-fw fa-folder-open"></i>Listado de noticias</a>
       </div>
     </div>
@@ -38,13 +37,12 @@
   <li class="nav-item">
     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
       <i class="fas fa-fw fa-file-alt"></i>
-      <span>Infografías</span>
+      <span>Infografias</span>
     </a>
     <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
       <div class="bg-white py-2 collapse-inner rounded">
-        <h6 class="collapse-header">Administración de infografías</h6>
-        <a class="collapse-item" (click)="redireccionarCrearInfografia()"><i class="fas fa-fw fa-edit"></i>Registrar infografía</a>
-        <a class="collapse-item" (click)="redireccionarListaInfografia()"><i class="fas fa-fw fa-folder-open"></i>Listado de infografías</a>
+        <h6 class="collapse-header">Administracion de infografias</h6>
+        <a class="collapse-item" (click)="redireccionarListaInfografia()"><i class="fas fa-fw fa-folder-open"></i>Listado de infografias</a>
       </div>
     </div>
   </li>
@@ -56,9 +54,8 @@
     </a>
     <div id="collapseEntidadesAliadas" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
       <div class="bg-white py-2 collapse-inner rounded">
-        <h6 class="collapse-header">Relación institucional</h6>
+        <h6 class="collapse-header">Relacion institucional</h6>
         <a class="collapse-item" (click)="redireccionarListaEntidadesAliadas()"><i class="fas fa-fw fa-list"></i>Directorio de entidades</a>
-        <a class="collapse-item" (click)="redireccionarCrearEntidadesAliadas()"><i class="fas fa-fw fa-plus-circle"></i>Registrar entidad</a>
       </div>
     </div>
   </li>
@@ -70,8 +67,7 @@
     </a>
     <div id="collapseVideo" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
       <div class="bg-white py-2 collapse-inner rounded">
-        <h6 class="collapse-header">Gestión audiovisual</h6>
-        <a class="collapse-item" (click)="redireccionarCrearVideo()"><i class="fas fa-fw fa-play-circle"></i>Registrar video</a>
+        <h6 class="collapse-header">Gestion audiovisual</h6>
         <a class="collapse-item" (click)="redireccionarListaVideo()"><i class="fas fa-fw fa-eye"></i>Listado de videos</a>
       </div>
     </div>
@@ -80,7 +76,7 @@
   <hr class="sidebar-divider">
 
   <div class="sidebar-heading">
-    Administración interna
+    Administracion interna
   </div>
 
   <li class="nav-item">
@@ -90,9 +86,36 @@
     </a>
     <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
       <div class="bg-white py-2 collapse-inner rounded">
-        <h6 class="collapse-header">Gestión de usuarios</h6>
-        <a class="collapse-item" (click)="redireccionarCrearUsuario()"><i class="fas fa-fw fa-user-plus"></i>Registrar usuario</a>
+        <h6 class="collapse-header">Gestion de usuarios</h6>
         <a class="collapse-item" (click)="redireccionarListaUsuario()"><i class="fas fa-fw fa-users"></i>Listado de usuarios</a>
+      </div>
+    </div>
+  </li>
+
+  <li class="nav-item">
+    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseReportes" aria-expanded="true" aria-controls="collapseReportes">
+      <i class="fas fa-fw fa-file-export"></i>
+      <span>Reportes</span>
+    </a>
+    <div id="collapseReportes" class="collapse" data-parent="#accordionSidebar">
+      <div class="bg-white py-2 collapse-inner rounded">
+        <h6 class="collapse-header">Seguimiento ejecutivo</h6>
+        <a class="collapse-item"><i class="fas fa-fw fa-file-pdf"></i>Reporte mensual</a>
+        <a class="collapse-item"><i class="fas fa-fw fa-table"></i>Exportacion consolidada</a>
+      </div>
+    </div>
+  </li>
+
+  <li class="nav-item">
+    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseSoporte" aria-expanded="true" aria-controls="collapseSoporte">
+      <i class="fas fa-fw fa-clipboard-check"></i>
+      <span>Supervision</span>
+    </a>
+    <div id="collapseSoporte" class="collapse" data-parent="#accordionSidebar">
+      <div class="bg-white py-2 collapse-inner rounded">
+        <h6 class="collapse-header">Control operativo</h6>
+        <a class="collapse-item"><i class="fas fa-fw fa-history"></i>Historial de actividad</a>
+        <a class="collapse-item"><i class="fas fa-fw fa-bell"></i>Alertas internas</a>
       </div>
     </div>
   </li>
@@ -101,6 +124,6 @@
 
   <div class="sidebar-footer">
     <small>Panel institucional demo</small>
-    <strong>Gobierno Regional de Apurímac</strong>
+    <strong>Gobierno Regional de Apurimac</strong>
   </div>
 </ul>

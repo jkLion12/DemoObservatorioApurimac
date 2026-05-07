@@ -38,6 +38,30 @@ export class ApiService {
       lugar: 'Chincheros',
       portada: this.asset('assets/img/portada 3.jpg'),
     },
+    {
+      id: '4',
+      titulo: 'Jornada de capacitación fortalece respuestas territoriales',
+      descripcion: 'Equipos técnicos revisaron rutas de derivación y mecanismos de coordinación local.',
+      fecha: '2026-04-11',
+      lugar: 'Cotabambas',
+      portada: this.asset('assets/img/portada 4.jpg'),
+    },
+    {
+      id: '5',
+      titulo: 'Observatorio presenta paquete de evidencias y material visual',
+      descripcion: 'Nuevo bloque de recursos para difusión pública, análisis y trabajo interinstitucional.',
+      fecha: '2026-03-27',
+      lugar: 'Grau',
+      portada: this.asset('assets/img/Portada 5.jpeg'),
+    },
+    {
+      id: '6',
+      titulo: 'Encuentro regional consolida agenda de prevención y protección',
+      descripcion: 'Participaron actores públicos y aliados para alinear prioridades del semestre.',
+      fecha: '2026-03-10',
+      lugar: 'Aymaraes',
+      portada: this.asset('assets/img/Portada 1.jpg'),
+    },
   ];
 
   private readonly infografias: InfografiaI[] = [
@@ -64,6 +88,14 @@ export class ApiService {
       fecha: '2026-03-30',
       lugar: 'Apurimac',
       portada: this.asset('assets/img/img2.jpeg'),
+    },
+    {
+      id_infografia: '4',
+      titulo: 'Servicios activos y puertas de entrada',
+      descripcion: 'Ruta visual de orientación para ciudadanía e instituciones.',
+      fecha: '2026-03-14',
+      lugar: 'Apurimac',
+      portada: this.asset('assets/img/img1.jpg'),
     },
   ];
 

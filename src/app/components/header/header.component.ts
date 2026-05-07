@@ -11,44 +11,59 @@ import { CommonModule } from '@angular/common';
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
+  menuAbierto = false;
+  dropdownOpen = false;
 
-  
   constructor(private router: Router){
 
   }
 
+  private closeMenus() {
+    this.menuAbierto = false;
+    this.dropdownOpen = false;
+  }
+
   //funciones para redireccionar
   redirectToabout(){
+    this.closeMenus();
     this.router.navigate(['/about']); // '
 
   }
   redirectToContact(){
+    this.closeMenus();
     this.router.navigate(['/contact']); // '
 
   }
   redirectToInicio(){
+    this.closeMenus();
     this.router.navigate(['/home']); // '
   }
   redirectToInfografias(){
+    this.closeMenus();
     this.router.navigate(['/infografias']); // '
   }
   
   redirectToMarcoConceptual(){
+    this.closeMenus();
     this.router.navigate(['/marco-conceptual']); // '
   }
   
   
   redirectToNoticias(){
+    this.closeMenus();
     this.router.navigate(['/noticias']); // '
   }
   
   redirectToSistemaRegional(){
+    this.closeMenus();
     this.router.navigate(['/sistema-regional']); // '
   }
   redirectToVideos(){
+    this.closeMenus();
     this.router.navigate(['/videos']); // '
   }
   redirectToRepositorio(){
+    this.closeMenus();
     this.router.navigate(['/repositorio']); // '
   }
   // redirectToDashboard() {
@@ -58,13 +73,25 @@ export class HeaderComponent {
   redirectToDashboard() {
     window.open('/login', '_blank');
   }
-  
-
-  menuAbierto = false;
 
   toggleMenu() {
     this.menuAbierto = !this.menuAbierto;
+    if (this.menuAbierto) {
+      this.dropdownOpen = false;
+    }
   }
-  
+
+  toggleDropdown(event?: Event) {
+    event?.preventDefault();
+    this.dropdownOpen = !this.dropdownOpen;
+  }
+
+  openDropdown() {
+    this.dropdownOpen = true;
+  }
+
+  closeDropdown() {
+    this.dropdownOpen = false;
+  }
 
 }

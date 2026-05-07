@@ -8,7 +8,14 @@
   filter: brightness(0) invert(1);
 }
 
-.container-fluid.bg-dark {
+.gov-footer {
+  position: relative;
+  z-index: 1;
+  margin-top: 5rem;
+}
+
+.gov-footer__main,
+.gov-footer__bottom {
   background: linear-gradient(180deg, #0d2442 0%, #102c50 100%) !important;
 }
 
@@ -24,6 +31,42 @@ h5,
 h6 {
   font-size: 0.96rem;
   font-weight: 700;
+}
+
+.gov-footer__intro,
+.gov-footer__contact p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.gov-footer__social {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.gov-footer__newsletter {
+  margin-top: 1.5rem;
+  padding: 1.2rem;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.gov-footer__newsletter-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.gov-footer__newsletter-form .form-control {
+  min-height: 50px;
+  border-radius: 10px;
+}
+
+.gov-footer__newsletter-form .btn {
+  width: 100%;
+  border-radius: 10px;
 }
 
 .btn-outline-primary {
@@ -46,7 +89,13 @@ h6 {
 }
 
 a.text-white-50:hover,
-.container-fluid.bg-dark a:hover {
+.gov-footer a:hover {
   color: #d8b36b !important;
   text-decoration: none;
+}
+
+@media (max-width: 991px) {
+  .gov-footer {
+    margin-top: 3.5rem;
+  }
 }

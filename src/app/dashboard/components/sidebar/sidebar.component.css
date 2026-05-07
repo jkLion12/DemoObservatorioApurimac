@@ -72,3 +72,41 @@
   font-size: 0.85rem;
   color: #ffffff;
 }
+
+@media (max-width: 768px) {
+  .gov-sidebar {
+    width: 88px !important;
+    min-width: 88px !important;
+    max-width: 88px !important;
+  }
+
+  .gov-sidebar .sidebar-brand {
+    justify-content: center !important;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  .gov-sidebar .sidebar-brand-text,
+  .gov-sidebar .sidebar-heading,
+  .gov-sidebar .collapse-inner,
+  .sidebar-footer {
+    display: none !important;
+  }
+
+  .gov-sidebar .nav-item .nav-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  .gov-sidebar .nav-item .nav-link span {
+    display: none;
+  }
+
+  .gov-sidebar .nav-item .nav-link i {
+    font-size: 1rem;
+    margin-right: 0 !important;
+  }
+}

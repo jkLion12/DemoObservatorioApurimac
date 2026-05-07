@@ -154,3 +154,18 @@
     align-items: flex-start;
   }
 }
+
+@media (max-width: 768px) {
+  .gov-dashboard {
+    padding-left: 0.35rem;
+    padding-right: 0.35rem;
+  }
+
+  .gov-dashboard__hero {
+    padding: 1.1rem;
+  }
+
+  .gov-dashboard__hero h1 {
+    font-size: 1.25rem;
+  }
+}

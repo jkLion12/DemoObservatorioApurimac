@@ -41,16 +41,33 @@
           </div>
         </section>
 
-        <section class="row">
-          <div class="col-xl-3 col-md-6 mb-4">
-            <div class="gov-action-card" (click)="redireccionarCrearNoticia()">
-              <i class="fas fa-bullhorn"></i>
-              <span>Noticias</span>
-              <strong>Registrar noticia</strong>
-              <p>Publicar un nuevo contenido informativo.</p>
+        <section class="row mb-4">
+          <div class="col-xl-8 mb-4">
+            <div class="gov-action-card gov-action-card--wide">
+              <i class="fas fa-layer-group"></i>
+              <span>Registro rápido</span>
+              <strong>Modales de carga y edición operativa</strong>
+              <p class="mb-3">Para una experiencia más profesional, el dashboard ahora prioriza acciones rápidas en modal para registrar contenidos sin salir del panel.</p>
+              <div class="gov-action-toolbar__group">
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalNoticia">Nueva noticia</button>
+                <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#modalInfografia">Nueva infografía</button>
+                <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#modalVideo">Nuevo video</button>
+                <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#modalUsuario">Nuevo usuario</button>
+                <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#modalAliado">Nuevo aliado</button>
+              </div>
             </div>
           </div>
+          <div class="col-xl-4 mb-4">
+            <div class="gov-kpi-card gov-kpi-card--gold">
+              <span>Resumen ejecutivo</span>
+              <strong>5 módulos activos</strong>
+              <p class="mb-2">Noticias, infografías, videos, entidades aliadas y usuarios.</p>
+              <p class="mb-0">Incluye accesos de exportación, filtros y rutas de consulta administrativa.</p>
+            </div>
+          </div>
+        </section>
 
+        <section class="row">
           <div class="col-xl-3 col-md-6 mb-4">
             <div class="gov-action-card" (click)="redireccionarListaNoticia()">
               <i class="fas fa-folder-open"></i>
@@ -61,29 +78,11 @@
           </div>
 
           <div class="col-xl-3 col-md-6 mb-4">
-            <div class="gov-action-card" (click)="redireccionarCrearInfografia()">
-              <i class="fas fa-file-alt"></i>
-              <span>Infografías</span>
-              <strong>Registrar infografía</strong>
-              <p>Subir nuevo material visual del observatorio.</p>
-            </div>
-          </div>
-
-          <div class="col-xl-3 col-md-6 mb-4">
             <div class="gov-action-card" (click)="redireccionarListaInfografia()">
               <i class="fas fa-images"></i>
               <span>Infografías</span>
               <strong>Revisar listado</strong>
               <p>Gestionar piezas visuales ya registradas.</p>
-            </div>
-          </div>
-
-          <div class="col-xl-3 col-md-6 mb-4">
-            <div class="gov-action-card" (click)="redireccionarCrearVideo()">
-              <i class="fas fa-video"></i>
-              <span>Videos</span>
-              <strong>Registrar video</strong>
-              <p>Agregar nuevo contenido audiovisual institucional.</p>
             </div>
           </div>
 
@@ -105,15 +104,6 @@
             </div>
           </div>
 
-          <div class="col-xl-3 col-md-6 mb-4">
-            <div class="gov-action-card" (click)="redireccionarCrearUsuario()">
-              <i class="fas fa-user-plus"></i>
-              <span>Usuarios</span>
-              <strong>Registrar usuario</strong>
-              <p>Crear una nueva cuenta de administración.</p>
-            </div>
-          </div>
-
           <div class="col-xl-6 col-md-6 mb-4">
             <div class="gov-action-card gov-action-card--wide" (click)="redireccionarEntidadAliada()">
               <i class="fas fa-handshake"></i>
@@ -124,11 +114,43 @@
           </div>
 
           <div class="col-xl-6 col-md-6 mb-4">
-            <div class="gov-action-card gov-action-card--wide" (click)="redireccionarCrearEntidadAliada()">
-              <i class="fas fa-plus-circle"></i>
-              <span>Entidades aliadas</span>
-              <strong>Registrar nueva entidad</strong>
-              <p>Incorporar organizaciones aliadas con su descripción, identidad y documentación base.</p>
+            <div class="gov-action-card gov-action-card--wide">
+              <i class="fas fa-chart-pie"></i>
+              <span>Reportes y control</span>
+              <strong>Exportación general y seguimiento</strong>
+              <p class="mb-3">Accesos de demostración para reportes consolidados, exportación y monitoreo administrativo.</p>
+              <div class="gov-action-toolbar__group">
+                <button type="button" class="btn btn-primary">Exportar resumen</button>
+                <button type="button" class="btn btn-outline-primary">Descargar PDF</button>
+                <button type="button" class="btn btn-outline-primary">Compartir reporte</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="row">
+          <div class="col-xl-4 mb-4">
+            <div class="gov-kpi-card gov-kpi-card--blue">
+              <span>Actividad reciente</span>
+              <strong>Operaciones del día</strong>
+              <p class="mb-2">3 noticias actualizadas, 2 videos revisados y 1 entidad aliada validada.</p>
+              <p class="mb-0">Esta sección mejora la percepción de dashboard vivo y operativo.</p>
+            </div>
+          </div>
+          <div class="col-xl-4 mb-4">
+            <div class="gov-kpi-card gov-kpi-card--slate">
+              <span>Agenda del panel</span>
+              <strong>Tareas próximas</strong>
+              <p class="mb-2">Revisar material audiovisual, actualizar directorio de servicios y validar nuevos usuarios.</p>
+              <p class="mb-0">Pensado para transmitir orden y continuidad operativa.</p>
+            </div>
+          </div>
+          <div class="col-xl-4 mb-4">
+            <div class="gov-kpi-card gov-kpi-card--gold">
+              <span>Soporte administrativo</span>
+              <strong>Centro de acciones</strong>
+              <p class="mb-2">Accesos rápidos para gestión de contenidos, personas y articulación institucional.</p>
+              <p class="mb-0">Una capa más profesional que ayuda mucho en la evaluación visual del sistema.</p>
             </div>
           </div>
         </section>
@@ -136,5 +158,261 @@
     </div>
 
     <app-footer></app-footer>
+  </div>
+</div>
+
+<div class="modal fade gov-modal-form" id="modalNoticia" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Registrar noticia</h5>
+        <button type="button" class="close text-white" data-dismiss="modal"><span>&times;</span></button>
+      </div>
+      <div class="modal-body">
+        <div class="gov-modal-grid">
+          <div class="bg-white p-4 rounded">
+            <div class="row mb-3">
+              <div class="col-md-6">
+                <label class="form-label">Fecha</label>
+                <input type="date" class="form-control">
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Lugar</label>
+                <input type="text" class="form-control" placeholder="Ej: Abancay">
+              </div>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Título</label>
+              <input type="text" class="form-control" placeholder="Título institucional">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Descripción</label>
+              <textarea class="form-control" placeholder="Describe el contenido de la noticia"></textarea>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Portada</label>
+              <input type="file" class="form-control">
+            </div>
+          </div>
+          <div class="gov-modal-side">
+            <h6>Recomendaciones</h6>
+            <ul>
+              <li>Título breve y orientado a una sola idea.</li>
+              <li>Fecha y lugar consistentes con la publicación.</li>
+              <li>Portada clara y útil para web.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Guardar registro</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade gov-modal-form" id="modalInfografia" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Registrar infografía</h5>
+        <button type="button" class="close text-white" data-dismiss="modal"><span>&times;</span></button>
+      </div>
+      <div class="modal-body">
+        <div class="gov-modal-grid">
+          <div class="bg-white p-4 rounded">
+            <div class="row mb-3">
+              <div class="col-md-6">
+                <label class="form-label">Fecha</label>
+                <input type="date" class="form-control">
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Lugar</label>
+                <input type="text" class="form-control" placeholder="Ej: Apurímac">
+              </div>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Título</label>
+              <input type="text" class="form-control" placeholder="Nombre de la infografía">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Descripción</label>
+              <textarea class="form-control" placeholder="Resumen del material visual"></textarea>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Archivo</label>
+              <input type="file" class="form-control">
+            </div>
+          </div>
+          <div class="gov-modal-side">
+            <h6>Enfoque visual</h6>
+            <ul>
+              <li>Usar títulos legibles.</li>
+              <li>Priorizar un solo mensaje clave.</li>
+              <li>Preparar salida para portal y redes.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Guardar registro</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade gov-modal-form" id="modalVideo" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Registrar video</h5>
+        <button type="button" class="close text-white" data-dismiss="modal"><span>&times;</span></button>
+      </div>
+      <div class="modal-body">
+        <div class="gov-modal-grid">
+          <div class="bg-white p-4 rounded">
+            <div class="row mb-3">
+              <div class="col-md-6">
+                <label class="form-label">Fecha</label>
+                <input type="date" class="form-control">
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Lugar</label>
+                <input type="text" class="form-control">
+              </div>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Título</label>
+              <input type="text" class="form-control">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Descripción</label>
+              <textarea class="form-control"></textarea>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Archivo de video</label>
+              <input type="file" class="form-control">
+            </div>
+          </div>
+          <div class="gov-modal-side">
+            <h6>Buenas prácticas</h6>
+            <ul>
+              <li>Preferir videos breves y claros.</li>
+              <li>Describir propósito y audiencia.</li>
+              <li>Preparar miniatura y nombre consistentes.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Guardar registro</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade gov-modal-form" id="modalUsuario" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Registrar usuario</h5>
+        <button type="button" class="close text-white" data-dismiss="modal"><span>&times;</span></button>
+      </div>
+      <div class="modal-body">
+        <div class="gov-modal-grid">
+          <div class="bg-white p-4 rounded">
+            <div class="row mb-3">
+              <div class="col-md-6">
+                <label class="form-label">Nombre</label>
+                <input type="text" class="form-control">
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Apellido</label>
+                <input type="text" class="form-control">
+              </div>
+            </div>
+            <div class="row mb-3">
+              <div class="col-md-6">
+                <label class="form-label">Correo o usuario</label>
+                <input type="text" class="form-control">
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Estado</label>
+                <select class="form-control">
+                  <option>Activo</option>
+                  <option>Inactivo</option>
+                </select>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Contraseña</label>
+              <input type="password" class="form-control">
+            </div>
+          </div>
+          <div class="gov-modal-side">
+            <h6>Control de acceso</h6>
+            <ul>
+              <li>Usar correos institucionales.</li>
+              <li>Asignar estados de cuenta claros.</li>
+              <li>Documentar altas y revisiones.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Guardar registro</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade gov-modal-form" id="modalAliado" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Registrar entidad aliada</h5>
+        <button type="button" class="close text-white" data-dismiss="modal"><span>&times;</span></button>
+      </div>
+      <div class="modal-body">
+        <div class="gov-modal-grid">
+          <div class="bg-white p-4 rounded">
+            <div class="mb-3">
+              <label class="form-label">Nombre de entidad</label>
+              <input type="text" class="form-control">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Descripción</label>
+              <textarea class="form-control"></textarea>
+            </div>
+            <div class="row mb-3">
+              <div class="col-md-6">
+                <label class="form-label">Fecha de registro</label>
+                <input type="date" class="form-control">
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Portada / logotipo</label>
+                <input type="file" class="form-control">
+              </div>
+            </div>
+          </div>
+          <div class="gov-modal-side">
+            <h6>Relación institucional</h6>
+            <ul>
+              <li>Definir claramente el rol del aliado.</li>
+              <li>Usar descripción breve y formal.</li>
+              <li>Agregar identidad visual cuando exista.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Guardar registro</button>
+      </div>
+    </div>
   </div>
 </div>

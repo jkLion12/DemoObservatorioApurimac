@@ -53,22 +53,6 @@ export const routes: Routes = [
     loadComponent: () => import('./dashboard/main/main.component').then((m) => m.MainComponent),
   },
   {
-    path: 'crear-noticia',
-    loadComponent: () => import('./dashboard/crear-noticia/crear-noticia.component').then((m) => m.CrearNoticiaComponent),
-  },
-  {
-    path: 'crear-infografia',
-    loadComponent: () => import('./dashboard/crear-infografia/crear-infografia.component').then((m) => m.CrearInfografiaComponent),
-  },
-  {
-    path: 'crear-video',
-    loadComponent: () => import('./dashboard/crear-video/crear-video.component').then((m) => m.CrearVideoComponent),
-  },
-  {
-    path: 'crear-usuario',
-    loadComponent: () => import('./dashboard/crear-usuario/crear-usuario.component').then((m) => m.CrearUsuarioComponent),
-  },
-  {
     path: 'lista-infografia',
     loadComponent: () => import('./dashboard/lista-infografia/lista-infografia.component').then((m) => m.ListaInfografiaComponent),
   },
@@ -115,10 +99,6 @@ export const routes: Routes = [
   {
     path: 'detalle-video/:id',
     loadComponent: () => import('./view/detalle-video/detalle-video.component').then((m) => m.DetalleVideoComponent),
-  },
-  {
-    path: 'crear-entidad-aliada',
-    loadComponent: () => import('./dashboard/crear-entidad-aliada/crear-entidad-aliada.component').then((m) => m.CrearEntidadAliadaComponent),
   },
   {
     path: 'editar-entidad-aliada/:id',

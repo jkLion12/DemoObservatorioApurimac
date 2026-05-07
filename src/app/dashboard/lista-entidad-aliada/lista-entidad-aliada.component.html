@@ -1,147 +1,236 @@
-<!-- Page Wrapper -->
 <div id="wrapper" class="d-flex">
+  <app-sidebar></app-sidebar>
 
-    <!-- Sidebar -->
-    <app-sidebar></app-sidebar>
-  
-    <!-- Content Wrapper -->
-    <div id="content-wrapper" class="d-flex flex-column w-100"  style="height: 100vh; overflow-y: auto;">
-  
-      <!-- Main Content -->
-      <div id="content" class="d-flex flex-column w-100">
-  
-        <!-- Topbar -->
-        <app-topbar></app-topbar>
-        <!-- End of Topbar -->
-  
-        <!-- Your main content goes here -->
-        <div class="container-fluid">
-            <!-- Page Heading -->
-            <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                <h1 class="h3 mb-0 text-gray-800">Lista de Entidades</h1>
-                
-            </div>
+  <div id="content-wrapper" class="d-flex flex-column w-100" style="height: 100vh; overflow-y: auto;">
+    <div id="content" class="d-flex flex-column w-100">
+      <app-topbar></app-topbar>
 
-            <!-- Packages Start -->
-            <div class="container-fluid py-5">
-              <div class="container">
+      <div class="container-fluid">
+        <div class="d-sm-flex align-items-center justify-content-between mb-4">
+          <h1 class="h3 mb-0 text-gray-800">Lista de Entidades</h1>
+        </div>
 
-                <!-- BUSCADOR START -->
-                <div class="container my-4">
-                  <form class="bg-white p-4 rounded shadow-sm" (submit)="buscarentidad_aliada($event)">
-                    
-                    <!-- Buscar por título (Fila arriba) -->
-                    <div class="input-group mb-3">
-                      <span class="input-group-text" id="basic-addon1"><i class="fa fa-file-alt text-primary"></i></span>
-                      <input type="text" class="form-control" placeholder="Buscar publicación... (opcional)" 
-                            aria-label="Buscar publicación..." aria-describedby="basic-addon1"
-                            [(ngModel)]="busquedaTitulo" name="busquedaTitulo">
-                    </div>
-                    
-
-                    <!-- Fila con fechas y botón -->
-                    <div class="row g-3">
-                      <!-- Fecha desde -->
-                      <div class="col-md-4">
-                        <label for="fechaDesde" class="form-label">Desde</label>
-                        <input type="date" class="form-control" id="fechaDesde" 
-                              [(ngModel)]="fechaDesde" name="fechaDesde">
-                      </div>
-
-                      <!-- Fecha hasta -->
-                      <div class="col-md-4">
-                        <label for="fechaHasta" class="form-label">Hasta</label>
-                        <input type="date" class="form-control" id="fechaHasta"
-                              [(ngModel)]="fechaHasta" name="fechaHasta">
-                      </div>
-
-                      <!-- Botones de búsqueda y limpiar -->
-                      <div class="col-md-4 d-flex align-items-end">
-                        <button type="submit" class="btn btn-primary me-2">Buscar</button>
-                        <button type="button" class="btn btn-secondary" (click)="limpiarFiltros()">Limpiar</button>
-                      </div>
-                    </div>
-
-                  </form>
+        <div class="container-fluid py-5">
+          <div class="container">
+            <div class="row mb-4">
+              <div class="col-md-4 mb-3">
+                <div class="gov-summary-card">
+                  <span>Aliados visibles</span>
+                  <strong>{{ entidad_aliada.length }}</strong>
+                  <p>Entidades registradas para articulacion, seguimiento y consulta institucional.</p>
                 </div>
-                <!-- BUSCADOR END -->
-
-                <div class="row">
-                  <div class="col-lg-4 col-md-6 mb-4" *ngFor="let entidad of entidad_aliada ">
-                      <div class="package-item bg-white mb-2">
-                      <!-- Mostrar la imagen de portada de la noticia -->
-                      <img class="img-fluid" [src]="getImageUrl(entidad.portada)" alt="">
-
-                      <div class="p-4">
-                          <div class="d-flex justify-content-between mb-3">
-                          <!-- Mostrar el lugar y fecha -->
-                          <!-- <small class="m-0"><i class="fa fa-map-marker-alt text-primary mr-2"></i> {{ entidad.lugar }}</small> -->
-                          <small class="m-0"><i class="fa fa-calendar-alt text-primary mr-2"></i> {{ entidad.fecha_registro }}</small>
-                          </div>
-
-                          <!-- Mostrar el título de la noticia -->
-                          <a class="h5 text-decoration-none" href="">{{ entidad.nombre }}</a>
-
-                          <div class="border-top mt-4 pt-4">
-                          <!-- Mostrar la descripción de la noticia -->
-                          <p>
-                              {{ entidad.descripcion }}
-                          </p>
-
-                          <div class="d-flex justify-content-between mb-3">
-                              <!-- Botón para editar -->
-                              <small class="m-0" title="EDITAR" (click)="redireccionarEditarEntidadAliada(entidad.id_entidad_aliada)">
-                              <i class="fa fa-edit text-success mr-2"></i> EDITAR
-                              </small>
-                              <!-- Botón para eliminar (puedes implementar esta funcionalidad después) -->
-                              <small class="m-0" title="ELIMINAR">
-                              <i (click)="eliminarentidad_aliada(entidad.id_entidad_aliada)" class="fas fa-trash-alt text-danger"></i> ELIMINAR
-                              </small>
-                          </div>
-                          <div class="d-flex justify-content-between mb-3">
-                              <!-- Botón para ver más detalles -->
-                              <small class="m-0" title="VER MÁS DETALLES" (click)="redireccionarDetallesEntidadAliada(entidad.id_entidad_aliada)">
-                              <i class="fa fa-eye text-primary mr-2"></i> VER MÁS DETALLES 
-                              </small>
-                          
-                          </div>
-                          </div>
-                      </div>
-                      </div>
-                  </div>
+              </div>
+              <div class="col-md-4 mb-3">
+                <div class="gov-summary-card">
+                  <span>Documentacion</span>
+                  <strong>Control y consulta</strong>
+                  <p>Mejor presencia visual para un directorio institucional mas serio.</p>
                 </div>
-
-                <!-- Mensaje cuando no hay resultados -->
-                <div class="row" *ngIf="entidad_aliada.length === 0">
-                  <div class="col-12 text-center p-5">
-                    <h4>No se encontraron infografías con los filtros aplicados</h4>
-                    <button class="btn btn-primary mt-3" (click)="limpiarFiltros()">Ver todas las infografías</button>
-                  </div>
+              </div>
+              <div class="col-md-4 mb-3">
+                <div class="gov-summary-card">
+                  <span>Registro rapido</span>
+                  <strong>Modal integrado</strong>
+                  <p>Permite cargar nuevas entidades sin romper el flujo del listado.</p>
                 </div>
-
-                  <mat-paginator [length]="100"
-                              [pageSize]="10"
-                              [pageSizeOptions]="[5, 10, 25, 100]"
-                              aria-label="Select page">
-                  </mat-paginator>
               </div>
             </div>
-            <!-- Packages End -->
-          
-                            
 
+            <div class="gov-action-toolbar">
+              <div class="gov-action-toolbar__group">
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#registroEntidadModal">
+                  <i class="fas fa-plus-circle mr-2"></i>Registrar entidad
+                </button>
+                <button type="button" class="btn btn-outline-primary"><i class="fas fa-file-export mr-2"></i>Exportar Excel</button>
+                <button type="button" class="btn btn-outline-primary"><i class="fas fa-file-pdf mr-2"></i>Exportar PDF</button>
+                <button type="button" class="btn btn-outline-primary"><i class="fas fa-file-csv mr-2"></i>Exportar CSV</button>
+              </div>
+              <div class="gov-action-toolbar__group">
+                <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#filtrosEntidadesModal">
+                  <i class="fas fa-filter mr-2"></i>Filtros avanzados
+                </button>
+              </div>
+            </div>
+
+            <div class="gov-list-shell">
+              <div class="container my-4">
+                <form class="bg-white p-4 rounded shadow-sm" (submit)="buscarentidad_aliada($event)">
+                  <div class="input-group mb-3">
+                    <span class="input-group-text" id="entidad-addon"><i class="fa fa-file-alt text-primary"></i></span>
+                    <input type="text" class="form-control" placeholder="Buscar publicacion... (opcional)"
+                      aria-label="Buscar publicacion..." aria-describedby="entidad-addon"
+                      [(ngModel)]="busquedaTitulo" name="busquedaTitulo">
+                  </div>
+
+                  <div class="row g-3">
+                    <div class="col-md-4">
+                      <label for="fechaDesdeEntidad" class="form-label">Desde</label>
+                      <input type="date" class="form-control" id="fechaDesdeEntidad" [(ngModel)]="fechaDesde" name="fechaDesde">
+                    </div>
+
+                    <div class="col-md-4">
+                      <label for="fechaHastaEntidad" class="form-label">Hasta</label>
+                      <input type="date" class="form-control" id="fechaHastaEntidad" [(ngModel)]="fechaHasta" name="fechaHasta">
+                    </div>
+
+                    <div class="col-md-4 d-flex align-items-end">
+                      <button type="submit" class="btn btn-primary me-2">Buscar</button>
+                      <button type="button" class="btn btn-secondary" (click)="limpiarFiltros()">Limpiar</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+
+              <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4" *ngFor="let entidad of entidad_aliada">
+                  <div class="package-item bg-white mb-2">
+                    <img class="img-fluid" [src]="getImageUrl(entidad.portada)" alt="">
+
+                    <div class="p-4">
+                      <div class="d-flex justify-content-between mb-3">
+                        <small class="m-0"><i class="fa fa-calendar-alt text-primary mr-2"></i> {{ entidad.fecha_registro }}</small>
+                      </div>
+
+                      <a class="h5 text-decoration-none" href="">{{ entidad.nombre }}</a>
+
+                      <div class="border-top mt-4 pt-4">
+                        <p>{{ entidad.descripcion }}</p>
+
+                        <div class="d-flex justify-content-between mb-3">
+                          <small class="m-0" title="EDITAR" (click)="redireccionarEditarEntidadAliada(entidad.id_entidad_aliada)">
+                            <i class="fa fa-edit text-success mr-2"></i> EDITAR
+                          </small>
+                          <small class="m-0" title="ELIMINAR">
+                            <i (click)="eliminarentidad_aliada(entidad.id_entidad_aliada)" class="fas fa-trash-alt text-danger"></i> ELIMINAR
+                          </small>
+                        </div>
+                        <div class="d-flex justify-content-between mb-3">
+                          <small class="m-0" title="VER MAS DETALLES" (click)="redireccionarDetallesEntidadAliada(entidad.id_entidad_aliada)">
+                            <i class="fa fa-eye text-primary mr-2"></i> VER MAS DETALLES
+                          </small>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row" *ngIf="entidad_aliada.length === 0">
+                <div class="col-12 text-center p-5 gov-empty-state">
+                  <h4>No se encontraron entidades con los filtros aplicados</h4>
+                  <button class="btn btn-primary mt-3" (click)="limpiarFiltros()">Ver todas las entidades</button>
+                </div>
+              </div>
+
+              <mat-paginator [length]="100" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page"></mat-paginator>
+            </div>
+          </div>
         </div>
-  
+
+        <div class="modal fade gov-modal-form" id="registroEntidadModal" tabindex="-1" aria-hidden="true">
+          <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Registrar entidad aliada</h5>
+                <button type="button" class="close text-white" data-dismiss="modal"><span>&times;</span></button>
+              </div>
+              <div class="modal-body">
+                <div class="gov-modal-grid">
+                  <div class="bg-white p-4 rounded">
+                    <div class="row mb-3">
+                      <div class="col-md-6">
+                        <label class="form-label">Fecha</label>
+                        <input type="date" class="form-control">
+                      </div>
+                      <div class="col-md-6">
+                        <label class="form-label">Nombre</label>
+                        <input type="text" class="form-control" placeholder="Nombre de la entidad">
+                      </div>
+                    </div>
+                    <div class="mb-3">
+                      <label class="form-label">Descripcion</label>
+                      <textarea class="form-control" rows="8" placeholder="Describe la entidad aliada..."></textarea>
+                    </div>
+                    <div class="mb-3">
+                      <label class="form-label">Foto de portada</label>
+                      <input class="form-control" type="file" accept="image/*">
+                    </div>
+                  </div>
+                  <div class="gov-modal-side">
+                    <h6>Relacion institucional</h6>
+                    <ul>
+                      <li>Definir claramente el rol del aliado.</li>
+                      <li>Usar descripcion breve y formal.</li>
+                      <li>Agregar identidad visual cuando exista.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Registrar entidad</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal fade gov-filter-modal" id="filtrosEntidadesModal" tabindex="-1" aria-hidden="true">
+          <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Filtros avanzados de entidades</h5>
+                <button type="button" class="close text-white" data-dismiss="modal"><span>&times;</span></button>
+              </div>
+              <div class="modal-body">
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <label class="form-label">Tipo de aliado</label>
+                    <select class="form-control">
+                      <option>Todos</option>
+                      <option>Sector salud</option>
+                      <option>Sector educacion</option>
+                      <option>Cooperacion</option>
+                    </select>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label class="form-label">Estado de relacion</label>
+                    <select class="form-control">
+                      <option>Todos</option>
+                      <option>Activo</option>
+                      <option>En coordinacion</option>
+                      <option>Archivado</option>
+                    </select>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label class="form-label">Cobertura</label>
+                    <select class="form-control">
+                      <option>Cualquiera</option>
+                      <option>Regional</option>
+                      <option>Provincial</option>
+                      <option>Distrital</option>
+                    </select>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label class="form-label">Fecha de registro</label>
+                    <select class="form-control">
+                      <option>Cualquiera</option>
+                      <option>Ultimos 30 dias</option>
+                      <option>Ultimos 6 meses</option>
+                      <option>Ultimo ano</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Aplicar filtros</button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <!-- End of Main Content -->
-  
-      <!-- Footer -->
+
       <app-footer></app-footer>
-      <!-- End of Footer -->
-  
     </div>
-    <!-- End of Content Wrapper -->
-  
   </div>
-  <!-- End of Page Wrapper -->
-  
+</div>

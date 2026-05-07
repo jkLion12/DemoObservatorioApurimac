@@ -1,137 +1,250 @@
-<!-- Page Wrapper -->
 <div id="wrapper" class="d-flex">
+  <app-sidebar></app-sidebar>
 
-    <!-- Sidebar -->
-    <app-sidebar></app-sidebar>
-  
-    <!-- Content Wrapper -->
-    <div id="content-wrapper" class="d-flex flex-column w-100"  style="height: 100vh; overflow-y: auto;">
-  
-      <!-- Main Content -->
-      <div id="content" class="d-flex flex-column w-100">
-  
-        <!-- Topbar -->
-        <app-topbar></app-topbar>
-        <!-- End of Topbar -->
-  
-        <!-- Your main content goes here -->
-        <div class="container-fluid">
-            <!-- Page Heading -->
-            <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                <h1 class="h3 mb-0 text-gray-800">Lista de Usuarios</h1>
-                
-            </div>
+  <div id="content-wrapper" class="d-flex flex-column w-100" style="height: 100vh; overflow-y: auto;">
+    <div id="content" class="d-flex flex-column w-100">
+      <app-topbar></app-topbar>
 
-                        <!-- Packages Start -->
-            <div class="container-fluid py-5">
-              <div class="container">
-
- <!-- BUSCADOR START -->
- <div class="container my-4">
-  <form class="bg-white p-4 rounded shadow-sm" (submit)="buscarUsuarios($event)">
-    
-    <!-- Buscar por nombre (Fila arriba) -->
-    <div class="input-group mb-3">
-      <span class="input-group-text" id="basic-addon1"><i class="fa fa-file-alt text-primary"></i></span>
-      <input type="text" class="form-control" placeholder="Buscar usuario... (opcional)" 
-            aria-label="Buscar usuario..." aria-describedby="basic-addon1"
-            [(ngModel)]="busquedaNombre" name="busquedaNombre">
-    </div>
-    
-
-    <!-- Fila con fechas y botón -->
-    <div class="row g-3">
-      <!-- Fecha desde -->
-      <div class="col-md-4">
-        <label for="fechaDesde" class="form-label">Desde</label>
-        <input type="date" class="form-control" id="fechaDesde"
-              [(ngModel)]="fechaDesde" name="fechaDesde">
-      </div>
-
-      <!-- Fecha hasta -->
-      <div class="col-md-4">
-        <label for="fechaHasta" class="form-label">Hasta</label>
-        <input type="date" class="form-control" id="fechaHasta"
-              [(ngModel)]="fechaHasta" name="fechaHasta">
-      </div>
-
-      <!-- Botones de búsqueda y limpiar -->
-      <div class="col-md-4 d-flex align-items-end">
-        <button type="submit" class="btn btn-primary me-2">Buscar</button>
-        <button type="button" class="btn btn-secondary" (click)="limpiarFiltros()">Limpiar</button>
-      </div>
-    </div>
-
-  </form>
-</div>
-<!-- BUSCADOR END -->
-
-<div class="row">
-<div class="col-lg-4 col-md-6 mb-4" *ngFor="let usuario of usuarios">
-  <div class="package-item bg-white mb-2">
-  <!-- Mostrar la imagen de portada de la noticia -->
-  <!-- <img class="img-fluid" [src]="noticia.portada" alt=""> -->
-  <img class="img-fluid" src="../../../assets/img/User.png" alt="">
-
-  <div class="p-4">
-      <div class="d-flex justify-content-between mb-3">
-      <!-- Mostrar el estado y fecha -->
-      <small class="m-0">  <i class="fa fa-circle mr-2" [ngClass]="usuario.estado === 'Activo' ? 'text-success' : 'text-danger'"></i>{{ usuario.estado }}</small>
-      <small class="m-0"><i class="fa fa-calendar-alt text-primary mr-2"></i> {{ usuario.fecha_registro }}</small>
-      </div>
-
-      <!-- Mostrar el nombre del usuario -->
-      <a class="h5 text-decoration-none" href="">{{ usuario.nombre }} {{ usuario.apellido }}</a>
-
-      <div class="border-top mt-4 pt-4">
-            
-        <div class="d-flex justify-content-between mb-3">
-            <!-- Botón para editar -->
-            <small class="m-0" title="EDITAR" (click)="redireccionarEditarUusario(usuario.id_usuario)">
-            <i class="fa fa-edit text-success mr-2"></i> EDITAR
-            </small>
-            <!-- Botón para eliminar -->
-            <small (click)="eliminarUsuario(usuario.id_usuario)" class="m-0" title="ELIMINAR">
-            <i class="fas fa-trash-alt text-danger"></i> ELIMINAR
-            </small>
+      <div class="container-fluid">
+        <div class="d-sm-flex align-items-center justify-content-between mb-4">
+          <h1 class="h3 mb-0 text-gray-800">Lista de Usuarios</h1>
         </div>
-      </div>
-  </div>
-  </div>
-</div> 
-</div>
 
-<!-- Mensaje cuando no hay resultados -->
-<div class="row" *ngIf="usuarios.length === 0">
-<div class="col-12 text-center p-5">
-  <h4>No se encontraron usuarios con los filtros aplicados</h4>
-  <button class="btn btn-primary mt-3" (click)="limpiarFiltros()">Ver todos los usuarios</button>
-</div>
-</div>
-
-                  <mat-paginator [length]="100"
-                              [pageSize]="10"
-                              [pageSizeOptions]="[5, 10, 25, 100]"
-                              aria-label="Select page">
-                  </mat-paginator>
+        <div class="container-fluid py-5">
+          <div class="container">
+            <div class="row mb-4">
+              <div class="col-md-4 mb-3">
+                <div class="gov-summary-card">
+                  <span>Usuarios visibles</span>
+                  <strong>{{ usuarios.length }}</strong>
+                  <p>Perfiles internos listos para revision, edicion y control de acceso.</p>
+                </div>
+              </div>
+              <div class="col-md-4 mb-3">
+                <div class="gov-summary-card">
+                  <span>Estado del modulo</span>
+                  <strong>Seguimiento activo</strong>
+                  <p>La pantalla comunica mejor trazabilidad y control administrativo.</p>
+                </div>
+              </div>
+              <div class="col-md-4 mb-3">
+                <div class="gov-summary-card">
+                  <span>Registro rapido</span>
+                  <strong>Alta en modal</strong>
+                  <p>El nuevo usuario se agrega desde la misma vista de administracion.</p>
+                </div>
               </div>
             </div>
-            <!-- Packages End -->
-          
-                            
 
+            <div class="gov-action-toolbar">
+              <div class="gov-action-toolbar__group">
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#registroUsuarioModal">
+                  <i class="fas fa-user-plus mr-2"></i>Registrar usuario
+                </button>
+                <button type="button" class="btn btn-outline-primary"><i class="fas fa-file-export mr-2"></i>Exportar Excel</button>
+                <button type="button" class="btn btn-outline-primary"><i class="fas fa-file-pdf mr-2"></i>Exportar PDF</button>
+                <button type="button" class="btn btn-outline-primary"><i class="fas fa-file-csv mr-2"></i>Exportar CSV</button>
+              </div>
+              <div class="gov-action-toolbar__group">
+                <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#filtrosUsuariosModal">
+                  <i class="fas fa-filter mr-2"></i>Filtros avanzados
+                </button>
+              </div>
+            </div>
+
+            <div class="gov-list-shell">
+              <div class="container my-4">
+                <form class="bg-white p-4 rounded shadow-sm" (submit)="buscarUsuarios($event)">
+                  <div class="input-group mb-3">
+                    <span class="input-group-text" id="usuario-addon"><i class="fa fa-file-alt text-primary"></i></span>
+                    <input type="text" class="form-control" placeholder="Buscar usuario... (opcional)"
+                      aria-label="Buscar usuario..." aria-describedby="usuario-addon"
+                      [(ngModel)]="busquedaNombre" name="busquedaNombre">
+                  </div>
+
+                  <div class="row g-3">
+                    <div class="col-md-4">
+                      <label for="fechaDesdeUsuario" class="form-label">Desde</label>
+                      <input type="date" class="form-control" id="fechaDesdeUsuario" [(ngModel)]="fechaDesde" name="fechaDesde">
+                    </div>
+
+                    <div class="col-md-4">
+                      <label for="fechaHastaUsuario" class="form-label">Hasta</label>
+                      <input type="date" class="form-control" id="fechaHastaUsuario" [(ngModel)]="fechaHasta" name="fechaHasta">
+                    </div>
+
+                    <div class="col-md-4 d-flex align-items-end">
+                      <button type="submit" class="btn btn-primary me-2">Buscar</button>
+                      <button type="button" class="btn btn-secondary" (click)="limpiarFiltros()">Limpiar</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+
+              <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4" *ngFor="let usuario of usuarios">
+                  <div class="package-item bg-white mb-2">
+                    <img class="img-fluid" src="../../../assets/img/User.png" alt="">
+
+                    <div class="p-4">
+                      <div class="d-flex justify-content-between mb-3">
+                        <small class="m-0"><i class="fa fa-circle mr-2" [ngClass]="usuario.estado === 'Activo' ? 'text-success' : 'text-danger'"></i>{{ usuario.estado }}</small>
+                        <small class="m-0"><i class="fa fa-calendar-alt text-primary mr-2"></i> {{ usuario.fecha_registro }}</small>
+                      </div>
+
+                      <a class="h5 text-decoration-none" href="">{{ usuario.nombre }} {{ usuario.apellido }}</a>
+
+                      <div class="border-top mt-4 pt-4">
+                        <div class="d-flex justify-content-between mb-3">
+                          <small class="m-0" title="EDITAR" (click)="redireccionarEditarUusario(usuario.id_usuario)">
+                            <i class="fa fa-edit text-success mr-2"></i> EDITAR
+                          </small>
+                          <small (click)="eliminarUsuario(usuario.id_usuario)" class="m-0" title="ELIMINAR">
+                            <i class="fas fa-trash-alt text-danger"></i> ELIMINAR
+                          </small>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row" *ngIf="usuarios.length === 0">
+                <div class="col-12 text-center p-5 gov-empty-state">
+                  <h4>No se encontraron usuarios con los filtros aplicados</h4>
+                  <button class="btn btn-primary mt-3" (click)="limpiarFiltros()">Ver todos los usuarios</button>
+                </div>
+              </div>
+
+              <mat-paginator [length]="100" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page"></mat-paginator>
+            </div>
+          </div>
         </div>
-  
+
+        <div class="modal fade gov-modal-form" id="registroUsuarioModal" tabindex="-1" aria-hidden="true">
+          <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Registrar usuario</h5>
+                <button type="button" class="close text-white" data-dismiss="modal"><span>&times;</span></button>
+              </div>
+              <div class="modal-body">
+                <div class="gov-modal-grid">
+                  <div class="bg-white p-4 rounded">
+                    <div class="row mb-3">
+                      <div class="col-md-6">
+                        <label class="form-label">Nombre</label>
+                        <input type="text" class="form-control" placeholder="Ej: Juan">
+                      </div>
+                      <div class="col-md-6">
+                        <label class="form-label">Apellido</label>
+                        <input type="text" class="form-control" placeholder="Ej: Perez">
+                      </div>
+                    </div>
+                    <div class="row mb-3">
+                      <div class="col-md-4">
+                        <label class="form-label">Nombre de usuario o correo</label>
+                        <input type="text" class="form-control" placeholder="usuario@ejemplo.com">
+                      </div>
+                      <div class="col-md-4">
+                        <label class="form-label">Contrasena</label>
+                        <input type="password" class="form-control" placeholder="******">
+                      </div>
+                      <div class="col-md-4">
+                        <label class="form-label">Confirmar contrasena</label>
+                        <input type="password" class="form-control" placeholder="******">
+                      </div>
+                    </div>
+                    <div class="row mb-3">
+                      <div class="col-md-6">
+                        <label class="form-label">Fecha de registro</label>
+                        <input type="date" class="form-control">
+                      </div>
+                      <div class="col-md-6">
+                        <label class="form-label">Estado</label>
+                        <select class="form-control">
+                          <option>Seleccione</option>
+                          <option>Activo</option>
+                          <option>Inactivo</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="gov-modal-side">
+                    <h6>Buenas practicas de acceso</h6>
+                    <ul>
+                      <li>Registrar nombres completos y correo institucional.</li>
+                      <li>Asignar estados de cuenta coherentes con el rol.</li>
+                      <li>Evitar contrasenas debiles en el entorno real.</li>
+                      <li>Documentar la fecha de alta para trazabilidad.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Registrar usuario</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal fade gov-filter-modal" id="filtrosUsuariosModal" tabindex="-1" aria-hidden="true">
+          <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Filtros avanzados de usuarios</h5>
+                <button type="button" class="close text-white" data-dismiss="modal"><span>&times;</span></button>
+              </div>
+              <div class="modal-body">
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <label class="form-label">Estado</label>
+                    <select class="form-control">
+                      <option>Todos</option>
+                      <option>Activo</option>
+                      <option>Inactivo</option>
+                    </select>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label class="form-label">Perfil</label>
+                    <select class="form-control">
+                      <option>Todos</option>
+                      <option>Administrador</option>
+                      <option>Editor</option>
+                      <option>Consulta</option>
+                    </select>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label class="form-label">Fecha de alta</label>
+                    <select class="form-control">
+                      <option>Cualquiera</option>
+                      <option>Ultimos 7 dias</option>
+                      <option>Ultimos 30 dias</option>
+                      <option>Este ano</option>
+                    </select>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label class="form-label">Sede</label>
+                    <select class="form-control">
+                      <option>Todas</option>
+                      <option>Abancay</option>
+                      <option>Andahuaylas</option>
+                      <option>Chincheros</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Aplicar filtros</button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <!-- End of Main Content -->
-  
-      <!-- Footer -->
+
       <app-footer></app-footer>
-      <!-- End of Footer -->
-  
     </div>
-    <!-- End of Content Wrapper -->
-  
   </div>
-  <!-- End of Page Wrapper -->
-  
+</div>

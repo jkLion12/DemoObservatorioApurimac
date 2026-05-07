@@ -41,8 +41,8 @@
       <a (click)="redirectToMarcoConceptual()"><i class="bi bi-journal-text"></i> Marco Conceptual</a>            
         
       
-      <div class="dropdown">         
-        <a class="dropdown-toggle">           
+      <div class="dropdown" [class.open]="dropdownOpen" (mouseenter)="openDropdown()" (mouseleave)="closeDropdown()">         
+        <a class="dropdown-toggle" (click)="toggleDropdown($event)">           
           <i class="bi bi-file-earmark-text me-2"></i> El Observatorio Informa <i class="bi bi-chevron-down ms-2"></i>
         </a>         
         <div class="dropdown-menu">           
@@ -69,6 +69,7 @@
     <a (click)="redirectToabout()">Nosotros</a>
     <a (click)="redirectToSistemaRegional()">Sistema Regional</a>
     <a (click)="redirectToMarcoConceptual()">Marco Conceptual</a>
+    <span class="side-menu-label">El observatorio informa</span>
     <a (click)="redirectToNoticias()">Noticias</a>
     <a (click)="redirectToInfografias()">Infografías</a>
     <a (click)="redirectToVideos()">Videos</a>
