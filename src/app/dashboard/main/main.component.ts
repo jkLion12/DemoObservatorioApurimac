@@ -88,7 +88,7 @@ export class MainComponent {
     this.router.navigate(['/lista-infografia']); // '
   }
   redireccionarInicio(){
-    window.open('/home', '_blank');
+    this.router.navigate(['/home']); // '
 
   }
   redireccionarEntidadAliada(){

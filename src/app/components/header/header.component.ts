@@ -71,7 +71,7 @@ export class HeaderComponent {
   // }
   
   redirectToDashboard() {
-    window.open('/login', '_blank');
+    this.router.navigate(['/login'])
   }
 
   toggleMenu() {
