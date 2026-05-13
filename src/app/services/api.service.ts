@@ -312,8 +312,8 @@ export class ApiService {
   }
 
   private asset(path: string): string {
-    if (typeof window !== 'undefined' && window.location?.origin) {
-      return `${window.location.origin}/${path.replace(/^\/+/, '')}`;
+    if (typeof document !== 'undefined') {
+      return new URL(path.replace(/^\/+/, ''), document.baseURI).toString();
     }
 
     return path;
